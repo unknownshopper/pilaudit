@@ -334,3 +334,34 @@ strong {
     font-size: 0.8rem;
   }
 }
+
+@media print {
+  body {
+    background: #ffffff;
+  }
+
+  header,
+  nav,
+  footer {
+    display: none !important;
+  }
+
+  .btn-primary {
+    display: none !important;
+  }
+
+  .propuesta-container {
+    max-width: 100%;
+    margin: 0;
+    padding: 0;
+  }
+
+  .propuesta-container section {
+    page-break-inside: avoid;
+    break-inside: avoid;
+  }
+
+  @page {
+    margin: 20mm;
+  }
+}
