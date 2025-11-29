@@ -9,8 +9,18 @@
 <body>
   <main class="propuesta-container">
     <section>
-      <h1>Propuesta de Desarrollo de Portal Web y CRM</h1>
-      <p><strong>Cliente:</strong> Auditorías SA de CV</p>
+      <div style="display: flex; align-items: center; justify-content: space-between; gap: 1.5rem; margin-bottom: 1rem;">
+        <div style="flex-shrink: 0;">
+          <img src="logotus.jpg" alt="Logo The Unknown Shopper" style="max-height: 96px; border-radius: 8px;">
+        </div>
+        <div>
+          <h1>Propuesta de Desarrollo de Portal Web y CRM</h1>
+          <p><strong>Cliente:</strong> Auditorías SA de CV</p>
+          <p class="note-text" style="margin-top: 0.3rem; font-style: normal;">
+            Propuesta elaborada por <strong>The Unknown Shopper</strong>
+          </p>
+        </div>
+      </div>
       <p><strong>Fecha:</strong> <span id="proposal-date">[dd/mm/aaaa]</span></p>
     </section>
 
@@ -146,6 +156,7 @@
           <tr>
             <th>Concepto</th>
             <th>Detalle</th>
+            <th>Rango estimado de entrega</th>
             <th>Inversión estimada</th>
           </tr>
         </thead>
@@ -153,22 +164,30 @@
           <tr>
             <td>Diseño y maquetación</td>
             <td>Sitio público y estructura del portal de clientes</td>
-            <td>$ [monto]</td>
+            <td>1 a 2 semanas</td>
+            <td>$ 12,000</td>
           </tr>
           <tr>
             <td>Desarrollo de backend y base de datos</td>
             <td>APIs, autenticación y lógica de negocio</td>
-            <td>$ [monto]</td>
+            <td>3 a 5 semanas</td>
+            <td>$ 26,000</td>
           </tr>
           <tr>
             <td>Implementación y pruebas</td>
             <td>Pruebas, ajustes y puesta en producción</td>
-            <td>$ [monto]</td>
+            <td>2 a 3 semanas</td>
+            <td>$ 18,000</td>
           </tr>
           <tr>
             <td>Capacitación</td>
-            <td>Sesión de capacitación para usuarios administradores</td>
-            <td>$ [monto]</td>
+            <td>Sesión de capacitación para usuario(s) administrador(es)</td>
+            <td>0.5 a 1 semana</td>
+            <td>$ 6,000</td>
+          </tr>
+          <tr>
+            <td colspan="3"><strong>Total estimado del proyecto</strong></td>
+            <td><strong>$ 62,000</strong></td>
           </tr>
         </tbody>
       </table>
@@ -191,6 +210,7 @@
 
   <footer>
     <p>&copy; Auditorías SA de CV</p>
+    <p class="note-text">Propuesta preparada por The Unknown Shopper &mdash; contacto: the@unknownshoppers.com</p>
   </footer>
 
   <script src="script.js"></script>
