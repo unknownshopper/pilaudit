@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Propuesta de Sistema - Auditorías SA de CV</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="propuesta-container">
+    <section>
+      <h1>Propuesta de Desarrollo de Portal Web y CRM</h1>
+      <p><strong>Cliente:</strong> Auditorías SA de CV</p>
+      <p><strong>Fecha:</strong> <span id="proposal-date">[dd/mm/aaaa]</span></p>
+    </section>
+
+    <section>
+      <h2>1. Resumen ejecutivo</h2>
+      <p>
+        Se propone el desarrollo de un portal web con área pública e interfaz de CRM
+        para clientes, que permita gestionar servicios de auditoría, certificación,
+        capacitación y evaluación psicométrica, así como el intercambio de
+        documentación, avisos, actividades y el estado de pagos.
+      </p>
+    </section>
+
+    <section>
+      <h2>2. Objetivos del sistema</h2>
+      <ul>
+        <li>Centralizar la comunicación con los clientes en un solo portal.</li>
+        <li>Facilitar la consulta y carga de documentos de auditorías y certificaciones.</li>
+        <li>Dar visibilidad sobre actividades programadas, vencimientos y pagos.</li>
+        <li>Mejorar el control interno de los servicios brindados por Auditorías SA de CV.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>3. Alcance</h2>
+      <p>El alcance inicial (MVP) incluye:</p>
+      <ul>
+        <li>Sitio público con presentación de la empresa y detalle de servicios.</li>
+        <li>Área privada con acceso autenticado para clientes.</li>
+        <li>Módulo de documentos (subida/descarga) por cliente.</li>
+        <li>Módulo de avisos y actividades por cliente.</li>
+        <li>Vista básica del estado de pagos y servicios contratados.</li>
+        <li>
+          Quedan fuera de este alcance las integraciones con pasarelas de pago
+          o sistemas externos, salvo acuerdo posterior.
+        </li>
+        <li>
+          La capacidad de almacenamiento, tipos de archivo permitidos y límites de tamaño
+          podrán ajustarse en conjunto con el cliente, considerando las políticas de
+          seguridad, costos de infraestructura en Firebase y necesidades operativas.
+        </li>
+      </ul>
+      <p class="note-text">
+        * MVP (Producto Mínimo Viable) se refiere a la primera versión funcional del sistema
+        que incluye sólo las características esenciales para operar y validar el modelo
+        con los usuarios, dejando mejoras y funciones avanzadas para fases posteriores.
+      </p>
+    </section>
+
+    <section>
+      <h2>4. Módulos y funcionalidades</h2>
+
+      <h3>4.1 Área pública</h3>
+      <ul>
+        <li>Página de inicio e información corporativa.</li>
+        <li>
+          Sección de servicios:
+          <ul>
+            <li>Desarrollo de Sistema de Gestión.</li>
+            <li>Certificación en sistemas de gestión (auditoría 1ra y 2da parte).</li>
+            <li>Capacitación y competencias.</li>
+            <li>Evaluaciones psicométricas y búsqueda de vacantes.</li>
+          </ul>
+        </li>
+        <li>Formulario de contacto básico.</li>
+      </ul>
+
+      <h3>4.2 Área privada (portal de clientes)</h3>
+      <ul>
+        <li>Autenticación de clientes (usuario y contraseña).</li>
+        <li>Panel de inicio con resumen de servicios, avisos y próximos eventos.</li>
+        <li>Módulo de documentos: carga, descarga y clasificación por tipo/proyecto.</li>
+        <li>Módulo de avisos y actividades: recordatorios de auditorías, vencimientos y capacitaciones.</li>
+        <li>Módulo de pagos: listado de servicios y estatus (pagado/pendiente).</li>
+        <li>Gestión básica de perfil del cliente (datos de contacto).</li>
+      </ul>
+      <h3>4.3 Gestión de documentos y almacenamiento</h3>
+      <ul>
+        <li>Uso de Firebase Storage para el resguardo de todos los archivos del sistema.</li>
+        <li>
+          Definición de un espacio global para documentos corporativos fijos
+          (formatos, políticas, manuales, certificados, etc.) disponibles para descarga.
+        </li>
+        <li>
+          Asignación de cuota de almacenamiento por cliente. Propuesta inicial:
+          hasta 2 GB por cliente para archivos cargados por el propio cliente.
+        </li>
+        <li>
+          Tipos de archivo permitidos (ajustable): pdf, doc, docx, xls, xlsx, ppt, pptx, jpg, jpeg, png, zip.
+        </li>
+        <li>
+          Tamaño máximo por archivo (ajustable): hasta 10 MB por archivo en el alcance inicial.
+        </li>
+        <li>
+          Políticas de seguridad y acceso: cada cliente sólo podrá ver y descargar sus propios documentos
+          y los documentos corporativos que Auditorías SA de CV ponga a disposición.
+        </li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>5. Tecnologías propuestas</h2>
+      <ul>
+        <li>Frontend: HTML5, CSS3 y JavaScript.</li>
+        <li>Plataforma de backend y datos: Firebase (Authentication, Firestore y Storage).</li>
+        <li>
+          Base de datos: Firebase Firestore como base de datos principal para información de clientes,
+          servicios, actividades y metadatos de documentos.
+        </li>
+        <li>Diseño responsive para escritorio y dispositivos móviles.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>6. Fases de implementación</h2>
+      <ol>
+        <li>Levantamiento detallado de requerimientos y diseño funcional.</li>
+        <li>Maquetación del sitio público y portal de clientes.</li>
+        <li>Desarrollo de backend, base de datos y lógica de negocio.</li>
+        <li>Pruebas internas y con usuarios clave.</li>
+        <li>Puesta en marcha y capacitación básica a administradores.</li>
+      </ol>
+    </section>
+
+    <section>
+      <h2>7. Inversión y costos estimados</h2>
+      <p>
+        Los siguientes montos son referenciales y pueden ajustarse según el
+        detalle final del alcance:
+      </p>
+      <table class="proposal-table">
+        <thead>
+          <tr>
+            <th>Concepto</th>
+            <th>Detalle</th>
+            <th>Inversión estimada</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Diseño y maquetación</td>
+            <td>Sitio público y estructura del portal de clientes</td>
+            <td>$ [monto]</td>
+          </tr>
+          <tr>
+            <td>Desarrollo de backend y base de datos</td>
+            <td>APIs, autenticación y lógica de negocio</td>
+            <td>$ [monto]</td>
+          </tr>
+          <tr>
+            <td>Implementación y pruebas</td>
+            <td>Pruebas, ajustes y puesta en producción</td>
+            <td>$ [monto]</td>
+          </tr>
+          <tr>
+            <td>Capacitación</td>
+            <td>Sesión de capacitación para usuarios administradores</td>
+            <td>$ [monto]</td>
+          </tr>
+        </tbody>
+      </table>
+      <p>
+        *Los precios no incluyen impuestos. Los montos definitivos se definirán
+        en la versión final de la propuesta.
+      </p>
+    </section>
+
+    <section>
+      <h2>8. Conclusiones</h2>
+      <p>
+        Con este proyecto, Auditorías SA de CV contará con una plataforma
+        centralizada para la gestión de sus servicios y la relación con sus
+        clientes, mejorando la eficiencia operativa y la experiencia del
+        usuario final.
+      </p>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; Auditorías SA de CV</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

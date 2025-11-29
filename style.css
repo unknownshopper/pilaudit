@@ -1,0 +1,336 @@
+:root {
+  --bg-color: #f3f4f6;
+  --bg-elevated: #ffffff;
+  --bg-elevated-soft: #f9fafb;
+  --accent: #dc2626;
+  --accent-soft: rgba(220, 38, 38, 0.08);
+  --accent-strong: #b91c1c;
+  --text-main: #111827;
+  --text-muted: #4b5563;
+  --border-subtle: rgba(156, 163, 175, 0.6);
+  --shadow-soft: 0 18px 40px rgba(15, 23, 42, 0.08);
+  --radius-large: 18px;
+  --radius-pill: 999px;
+  --transition-fast: 0.18s ease-out;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  background: radial-gradient(circle at top left, #ffffff, #e5e7eb);
+  color: var(--text-main);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--accent-strong);
+}
+
+/* Layout general */
+
+header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: rgba(249, 250, 251, 0.96);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+nav {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0.8rem 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+}
+
+nav a {
+  font-size: 0.95rem;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  padding: 0.4rem 0.9rem;
+  border-radius: var(--radius-pill);
+  border: 1px solid transparent;
+  transition:
+    background-color var(--transition-fast),
+    border-color var(--transition-fast),
+    color var(--transition-fast),
+    transform var(--transition-fast);
+}
+
+nav a:hover {
+  background: var(--accent-soft);
+  border-color: rgba(56, 189, 248, 0.35);
+  color: var(--text-main);
+  transform: translateY(-1px);
+}
+
+main {
+  max-width: 1100px;
+  margin: 2.5rem auto 2.5rem;
+  padding: 0 1.5rem;
+}
+
+footer {
+  border-top: 1px solid var(--border-subtle);
+  padding: 1.5rem;
+  text-align: center;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  background: #f9fafb;
+}
+
+/* Contenedor de propuesta (tarjetas morph/neumorphism) */
+
+.propuesta-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1.8rem;
+  margin-top: 1.5rem;
+}
+
+.propuesta-container > section:first-of-type {
+  padding: 1.8rem 1.6rem;
+  border-radius: var(--radius-large);
+  background: linear-gradient(135deg, #ffffff, #f3f4f6);
+  border: 1px solid rgba(209, 213, 219, 0.9);
+  box-shadow: var(--shadow-soft);
+  position: relative;
+  overflow: hidden;
+}
+
+.propuesta-container > section:first-of-type::before {
+  content: "";
+  position: absolute;
+  width: 260px;
+  height: 260px;
+  right: -90px;
+  top: -80px;
+  background: radial-gradient(circle at center, rgba(248, 113, 113, 0.32), transparent 65%);
+  opacity: 0.7;
+  mix-blend-mode: multiply;
+  pointer-events: none;
+}
+
+.propuesta-container h1 {
+  font-size: clamp(1.7rem, 2.3vw, 2.1rem);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  margin-bottom: 0.75rem;
+}
+
+.propuesta-container h2 {
+  font-size: 1.2rem;
+  margin-bottom: 0.4rem;
+  color: var(--accent-strong);
+}
+
+.propuesta-container h3 {
+  font-size: 1.03rem;
+  margin: 1rem 0 0.35rem;
+  color: #b91c1c;
+}
+
+.propuesta-container p {
+  font-size: 0.98rem;
+  color: var(--text-main);
+}
+
+.propuesta-container ul,
+.propuesta-container ol {
+  padding-left: 1.2rem;
+  margin-top: 0.35rem;
+}
+
+.propuesta-container li {
+  margin-bottom: 0.2rem;
+  color: var(--text-muted);
+}
+
+.note-text {
+  font-size: 0.7rem;
+  color: rgba(148, 163, 184, 0.9);
+  margin-top: 0.6rem;
+  font-style: italic;
+  padding-left: 0.6rem;
+}
+
+/* Tarjetas morph para todas las secciones de contenido */
+
+.propuesta-container section:not(:first-of-type) {
+  padding: 1.4rem 1.6rem;
+  border-radius: var(--radius-large);
+  background: radial-gradient(circle at top left, #ffffff, #f3f4f6);
+  border: 1px solid rgba(209, 213, 219, 0.9);
+  box-shadow: var(--shadow-soft);
+  position: relative;
+  overflow: hidden;
+}
+
+.propuesta-container section:not(:first-of-type)::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at 0 0, rgba(248, 113, 113, 0.18), transparent 55%),
+    radial-gradient(circle at 100% 100%, rgba(254, 226, 226, 0.9), transparent 60%);
+  opacity: 0.55;
+  mix-blend-mode: screen;
+  pointer-events: none;
+}
+
+.propuesta-container section > * {
+  position: relative;
+  z-index: 1;
+}
+
+strong {
+  color: #111827;
+}
+
+#proposal-date {
+  color: var(--accent-strong);
+}
+
+/* Tablas en propuestas */
+
+.proposal-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 0.8rem;
+  font-size: 0.95rem;
+  background: #ffffff;
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 18px 30px rgba(15, 23, 42, 0.07);
+}
+
+.proposal-table thead {
+  background: linear-gradient(
+    90deg,
+    rgba(254, 226, 226, 0.95),
+    rgba(254, 242, 242, 0.9)
+  );
+}
+
+.proposal-table th,
+.proposal-table td {
+  padding: 0.65rem 0.8rem;
+  text-align: left;
+}
+
+.proposal-table th {
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  font-size: 0.8rem;
+  color: var(--accent-strong);
+}
+
+.proposal-table tbody tr:nth-child(even) {
+  background: #f9fafb;
+}
+
+.proposal-table tbody tr:nth-child(odd) {
+  background: #ffffff;
+}
+
+.proposal-table tbody tr:hover {
+  background: rgba(248, 113, 113, 0.08);
+  transition: background-color var(--transition-fast);
+}
+
+.proposal-table td:last-child {
+  white-space: nowrap;
+  color: var(--accent-strong);
+}
+
+/* Botones base (usables en todo el sitio) */
+
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.55rem 1.4rem;
+  border-radius: var(--radius-pill);
+  border: 1px solid rgba(220, 38, 38, 0.7);
+  background: radial-gradient(circle at 0 0, rgba(252, 165, 165, 0.9), rgba(220, 38, 38, 0.98));
+  color: #f9fafb;
+  font-size: 0.9rem;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  cursor: pointer;
+  box-shadow:
+    0 14px 30px rgba(248, 113, 113, 0.45);
+  transition:
+    transform var(--transition-fast),
+    box-shadow var(--transition-fast),
+    background var(--transition-fast),
+    border-color var(--transition-fast);
+}
+
+.btn-primary:hover {
+  transform: translateY(-1px) scale(1.01);
+  border-color: rgba(185, 28, 28, 1);
+  background: radial-gradient(circle at 0 0, rgba(252, 165, 165, 1), rgba(185, 28, 28, 1));
+}
+
+.btn-primary:active {
+  transform: translateY(1px) scale(0.99);
+  box-shadow: 0 8px 18px rgba(185, 28, 28, 0.5);
+}
+
+/* Responsivo */
+
+@media (max-width: 768px) {
+  nav {
+    padding-inline: 1rem;
+  }
+
+  nav ul {
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .propuesta-container section {
+    padding: 1.2rem 1.1rem;
+  }
+
+  .proposal-table th,
+  .proposal-table td {
+    padding: 0.5rem 0.6rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .proposal-table {
+    font-size: 0.8rem;
+  }
+}
