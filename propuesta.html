@@ -12,9 +12,9 @@
       <button type="button" class="btn-primary" onclick="window.print()">Descargar PDF</button>
     </section>
     
-    <section>
-      <div style="display: flex; align-items: flex-start; justify-content: space-between; gap: 1.75rem; margin-bottom: 0.75rem;">
-        <div style="display: flex; align-items: center; gap: 1.25rem;">
+    <section class="proposal-hero">
+      <div class="proposal-header" style="display: flex; align-items: flex-start; justify-content: space-between; gap: 1.75rem; margin-bottom: 0.75rem;">
+        <div class="proposal-header-main" style="display: flex; align-items: center; gap: 1.25rem;">
           <div style="flex-shrink: 0;">
             <img src="logotus.jpg" alt="Logo The Unknown Shopper" style="max-height: 122px; border-radius: 10px;">
           </div>
@@ -26,7 +26,7 @@
             </p>
           </div>
         </div>
-        <p style="margin-top: 0.3rem;"><strong>Fecha:</strong> <span id="proposal-date">[dd/mm/aaaa]</span></p>
+        <p class="proposal-date" style="margin-top: 0.3rem;"><strong>Fecha:</strong> <span id="proposal-date">[dd/mm/aaaa]</span></p>
       </div>
     </section>
 
@@ -157,6 +157,7 @@
         Los siguientes montos son referenciales y pueden ajustarse según el
         detalle final del alcance:
       </p>
+      <div class="table-wrapper">
       <table class="proposal-table">
         <thead>
           <tr>
@@ -197,6 +198,7 @@
           </tr>
         </tbody>
       </table>
+      </div>
       <p>
         *Los precios no incluyen impuestos. Los montos definitivos se definirán
         en la versión final de la propuesta.
