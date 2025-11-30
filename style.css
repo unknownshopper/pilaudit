@@ -249,6 +249,39 @@ strong {
   text-align: left;
 }
 
+/* Anchos relativos de columnas en tablas de propuesta
+   1: Concepto, 2: Detalle, 3: Rango, 4: Inversión */
+.proposal-table colgroup col:nth-child(1) {
+  width: 18%;
+}
+
+.proposal-table colgroup col:nth-child(2) {
+  width: 46%;
+}
+
+.proposal-table colgroup col:nth-child(3) {
+  width: 18%;
+}
+
+.proposal-table colgroup col:nth-child(4) {
+  width: 18%;
+}
+
+/* Asegurar que la columna de Detalle tenga mayor ancho visual */
+.proposal-table th:nth-child(2),
+.proposal-table td:nth-child(2) {
+  width: 48%;
+}
+
+.proposal-table th:nth-child(1),
+.proposal-table td:nth-child(1),
+.proposal-table th:nth-child(3),
+.proposal-table td:nth-child(3),
+.proposal-table th:nth-child(4),
+.proposal-table td:nth-child(4) {
+  width: 17%;
+}
+
 .proposal-table th {
   font-weight: 600;
   text-transform: uppercase;
@@ -271,7 +304,6 @@ strong {
 }
 
 .proposal-table td:last-child {
-  white-space: nowrap;
   color: var(--accent-strong);
 }
 

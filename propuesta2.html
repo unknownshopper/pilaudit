@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Propuesta de Sistema - Auditorías SA de CV</title>
+  <link rel="stylesheet" href="style.css?v=2">
+</head>
+<body>
+  <main class="propuesta-container">
+    <section style="display: flex; justify-content: flex-end; margin-bottom: 0.5rem;">
+      <button type="button" class="btn-primary" onclick="window.print()">Descargar PDF</button>
+    </section>
+    
+    <section class="proposal-hero">
+      <div class="proposal-header" style="display: flex; align-items: flex-start; justify-content: space-between; gap: 1.75rem; margin-bottom: 0.75rem;">
+        <div class="proposal-header-main" style="display: flex; align-items: center; gap: 1.25rem;">
+          <div style="flex-shrink: 0;">
+            <img src="logotus.jpg" alt="Logo The Unknown Shopper" style="max-height: 122px; border-radius: 10px;">
+          </div>
+          <div>
+            <h1>Propuesta de Desarrollo <br> de Portal Web y CRM</h1>
+            <p><strong>Cliente:</strong> Auditorías SA de CV</p>
+            <p class="note-text" style="margin-top: 0.3rem; font-style: normal;">
+              Propuesta elaborada por <strong>The Unknown Shopper</strong>
+            </p>
+          </div>
+        </div>
+        <p class="proposal-date" style="margin-top: 0.3rem;"><strong>Fecha:</strong> <span id="proposal-date">[dd/mm/aaaa]</span></p>
+      </div>
+    </section>
+
+    <section>
+      <h2>1. Resumen ejecutivo</h2>
+      <p>
+        Se propone el desarrollo por fases de un portal web corporativo y su arquitectura de CRM:
+        en una primera fase se implementará el sitio web público de Auditorías SA de CV y se dejará
+        preparada la estructura técnica necesaria para integrar posteriormente el portal de clientes,
+        y en una segunda fase se activará dicho portal con sus módulos de servicios.
+      </p>
+    </section>
+
+    <section>
+      <h2>2. Objetivos del sistema</h2>
+      <ul>
+        <li>Centralizar la comunicación con los clientes en un solo portal.</li>
+        <li>Facilitar la consulta y carga de documentos de auditorías y certificaciones.</li>
+        <li>Dar visibilidad sobre actividades programadas, vencimientos y pagos.</li>
+        <li>Mejorar el control interno de los servicios brindados por Auditorías SA de CV.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>3. Alcance</h2>
+      <p>El proyecto se plantea en dos fases:</p>
+      <p><strong>Fase 1 &mdash; Sitio público y arquitectura lista para CRM (alcance de esta propuesta):</strong></p>
+      <ul>
+        <li>Sitio público con presentación de la empresa y detalle de servicios.</li>
+        <li>Estructura base del portal (maquetación de pantallas clave) sin habilitar todavía el acceso general a clientes.</li>
+        <li>Preparación de la arquitectura en Firebase para que el CRM pueda activarse en la Fase 2 sin rehacer el desarrollo.</li>
+        <li>Formulario de contacto básico.</li>
+        <li>
+          La capacidad de almacenamiento, tipos de archivo permitidos y límites de tamaño
+          podrán ajustarse en conjunto con el cliente, considerando las políticas de
+          seguridad, costos de infraestructura en Firebase y necesidades operativas.
+        </li>
+      </ul>
+      <p><strong>Fase 2 &mdash; Activación del portal de clientes (a cotizar en propuesta posterior):</strong></p>
+      <ul>
+        <li>Área privada con acceso autenticado para clientes.</li>
+        <li>Módulo de documentos (subida/descarga) por cliente.</li>
+        <li>Módulo de avisos y actividades por cliente.</li>
+        <li>Vista básica del estado de pagos y servicios contratados.</li>
+        <li>
+          Quedan fuera de esta propuesta las integraciones con pasarelas de pago
+          o sistemas externos, que podrán evaluarse en esta fase o posteriores.
+        </li>
+      </ul>
+      <p class="note-text">
+        * MVP (Producto Mínimo Viable) se refiere a la primera versión funcional del sistema
+        que incluye sólo las características esenciales para operar y validar el modelo
+        con los usuarios, dejando mejoras y funciones avanzadas para fases posteriores.
+      </p>
+    </section>
+
+    <section>
+      <h2>4. Módulos y funcionalidades</h2>
+      <p>
+        En la Fase 1 se implementarán los módulos del área pública y la estructura técnica del portal;
+        los módulos de acceso de clientes se activarán en la Fase 2.
+      </p>
+      <h3>4.1 Área pública</h3>
+      <ul>
+        <li>Página de inicio e información corporativa.</li>
+        <li>
+          Sección de servicios:
+          <ul>
+            <li>Desarrollo de Sistema de Gestión.</li>
+            <li>Certificación en sistemas de gestión (auditoría 1ra y 2da parte).</li>
+            <li>Capacitación y competencias.</li>
+            <li>Evaluaciones psicométricas y búsqueda de vacantes.</li>
+          </ul>
+        </li>
+        <li>Formulario de contacto básico.</li>
+      </ul>
+
+      <h3>4.2 Área privada (portal de clientes)</h3>
+      <ul>
+        <li>Autenticación de clientes (usuario y contraseña).</li>
+        <li>Panel de inicio con resumen de servicios, avisos y próximos eventos.</li>
+        <li>Módulo de documentos: carga, descarga y clasificación por tipo/proyecto.</li>
+        <li>Módulo de avisos y actividades: recordatorios de auditorías, vencimientos y capacitaciones.</li>
+        <li>Módulo de pagos: listado de servicios y estatus (pagado/pendiente).</li>
+        <li>Gestión básica de perfil del cliente (datos de contacto).</li>
+      </ul>
+      <p class="note-text">
+        *Los módulos del área privada se encuentran considerados en la arquitectura desde la Fase 1,
+        pero su desarrollo completo y activación para clientes se realizará en la Fase 2.
+      </p>
+      <h3>4.3 Gestión de documentos y almacenamiento</h3>
+      <ul>
+        <li>Uso de Firebase Storage para el resguardo de todos los archivos del sistema.</li>
+        <li>
+          Definición de un espacio global para documentos corporativos fijos
+          (formatos, políticas, manuales, certificados, etc.) disponibles para descarga.
+        </li>
+        <li>
+          Asignación de cuota de almacenamiento por cliente. Propuesta inicial:
+          hasta 2 GB por cliente para archivos cargados por el propio cliente.
+        </li>
+        <li>
+          Tipos de archivo permitidos (ajustable): pdf, doc, docx, xls, xlsx, ppt, pptx, jpg, jpeg, png, zip.
+        </li>
+        <li>
+          Tamaño máximo por archivo (ajustable): hasta 10 MB por archivo en el alcance inicial.
+        </li>
+        <li>
+          Políticas de seguridad y acceso: cada cliente sólo podrá ver y descargar sus propios documentos
+          y los documentos corporativos que Auditorías SA de CV ponga a disposición.
+        </li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>5. Tecnologías propuestas</h2>
+      <ul>
+        <li>Frontend: HTML5, CSS3 y JavaScript.</li>
+        <li>Plataforma de backend y datos: Firebase (Authentication, Firestore y Storage).</li>
+        <li>
+          Base de datos: Firebase Firestore como base de datos principal para información de clientes,
+          servicios, actividades y metadatos de documentos.
+        </li>
+        <li>Diseño responsive para escritorio y dispositivos móviles.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>6. Fases de implementación</h2>
+      <ol>
+        <li>Levantamiento detallado de requerimientos y diseño funcional de la Fase 1.</li>
+        <li>Maquetación e implementación del sitio público y estructura base del portal de clientes.</li>
+        <li>Configuración inicial de Firebase (proyecto, reglas básicas y estructura para el futuro CRM).</li>
+        <li>Pruebas internas y puesta en marcha del sitio público.</li>
+        <li>Definición detallada del alcance y costos de la Fase 2 (activación del portal de clientes).</li>
+      </ol>
+    </section>
+
+    <section>
+      <h2>7. Inversión y costos estimados</h2>
+      <p>
+        Los siguientes montos son referenciales para la Fase 1 (sitio público y arquitectura lista para CRM)
+        y pueden ajustarse según el detalle final del alcance:
+      </p>
+      <div class="table-wrapper">
+      <table class="proposal-table">
+        <colgroup>
+          <col>
+          <col>
+          <col>
+          <col>
+        </colgroup>
+        <thead>
+          <tr>
+            <th>Concepto</th>
+            <th>Detalle</th>
+            <th>Rango estimado de entrega</th>
+            <th>Inversión estimada</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Sitio web y maquetación</td>
+            <td>
+              Diseño y maquetación del sitio público y estructura base del portal.
+              <br><strong>Opción A:</strong> Incluye dominio, hosting, certificado SSL y correo.
+              <br><strong>Opción B:</strong> Cuando el cliente ya cuenta con dominio, hosting, SSL y correo.
+            </td>
+            <td>1 a 2 semanas</td>
+            <td>
+              <strong>Opción A:</strong> $ 20,000
+              <br><strong>Opción B:</strong> $ 16,000
+            </td>
+          </tr>
+          <tr>
+            <td>Desarrollo</td>
+            <td>
+              <strong>Desarrollo Lite:</strong> Configuración de Firebase y desarrollo de la arquitectura lista para CRM
+              para que los clientes puedan autenticarse (login), consultar información y servicios y descargar archivos.
+              <br><strong>Desarrollo Full:</strong> Incluye todo lo anterior más la habilitación para que los clientes
+              puedan también subir archivos al portal (según políticas definidas de tamaño y tipo de archivo).
+            </td>
+            <td>3 a 5 semanas</td>
+            <td>
+              <strong>Lite:</strong> $ 20,000
+              <br><strong>Full:</strong> $ 28,000
+            </td>
+          </tr>
+          <tr>
+            <td>Implementación y puesta en marcha</td>
+            <td>Pruebas, ajustes finos, publicación del sitio y capacitación básica</td>
+            <td>2 a 3 semanas</td>
+            <td>$ 14,000</td>
+          </tr>
+          <tr>
+            <td><strong>Total estimado del proyecto </strong></td>
+            <td colspan="3">
+              <strong>Escenario Desarrollo Lite</strong>
+              <br>&bull; Sitio A (incluye dominio/hosting/SSL/correo): <strong>$ 54,000</strong>
+              <br>&bull; Sitio B (cliente ya tiene dominio/hosting/SSL/correo): <strong>$ 50,000</strong>
+              <br><br><strong>Escenario Desarrollo Full</strong>
+              <br>&bull; Sitio A (incluye dominio/hosting/SSL/correo): <strong>$ 62,000</strong>
+              <br>&bull; Sitio B (cliente ya tiene dominio/hosting/SSL/correo): <strong>$ 58,000</strong>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      </div>
+      <p>
+        *Los precios no incluyen impuestos. Los montos definitivos se definirán
+        en la versión final de la propuesta.
+      </p>
+      
+      
+    </section>
+
+    <section>
+      <h2>8. Conclusiones</h2>
+      <p>
+        Con este proyecto, Auditorías SA de CV contará con una plataforma
+        centralizada para la gestión de sus servicios y la relación con sus
+        clientes, mejorando la eficiencia operativa y la experiencia del
+        usuario final.
+      </p>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; Auditorías SA de CV</p>
+    <p class="note-text">Propuesta preparada por The Unknown Shopper &mdash; contacto: the@unknownshoppers.com</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
